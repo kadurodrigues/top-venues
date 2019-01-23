@@ -1,6 +1,6 @@
 # TopVenues
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+This an app to find and list the best avenues to visit in your next trip. 
 
 ## Development server
 
