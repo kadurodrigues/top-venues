@@ -1,0 +1,14 @@
+<div class="card">
+  <header class="card__header">
+    <h3 class="card__header-title">{{venue.name}}</h3>
+    <p class="card__header-widget">{{venue.rating}}</p>
+  </header>
+  <div class="card__body">
+    <p>categories:</p>
+    <ul>
+      <li *ngFor="let categorie of venue.categories">
+        <span>{{ categorie }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

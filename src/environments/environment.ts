@@ -1,9 +1,13 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import { CLIENT_ID, CLIENT_SECRET } from '../../apiKeys.js';
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://api.foursquare.com/v2/venues',
+  clientId: CLIENT_ID,
+  clientSecret: CLIENT_SECRET
 };
 
 /*
