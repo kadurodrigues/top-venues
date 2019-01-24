@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { VenuesModule } from './components/venues/venues.module';
-import { VenuesService } from './components/venues/venues.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,10 +14,10 @@ import { HeaderComponent } from './components/header/header.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     VenuesModule
   ],
-  providers: [VenuesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ export class VenuesService {
 
   public getVenues(): Observable<any> {
     return this.http
-      .get(`${environment.apiUrl}/explore?client_id=${environment.clientId}&client_secret=${environment.clientSecret}&v=20170903&near=Dublin,Ireland&section=topPicks&limit=20`)
+      .get(`${environment.apiUrl}/?client_id=${environment.clientId}&client_secret=${environment.clientSecret}&v=20170903&near=Dublin,Ireland&section=trending&price=2,3&limit=20`)
       .pipe(
         map(res => res),
         catchError(error => observableThrowError(error))

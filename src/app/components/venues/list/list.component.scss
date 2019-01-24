@@ -1,6 +1,7 @@
 .venues-list {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 
   &__item {
     margin-bottom: 20px;
@@ -10,10 +11,8 @@
 @media(min-width: 992px) {
   .venues-list {
     flex-direction: row;
-    
+
     &__item {
-      min-width: 14vw;
-      min-height: 200px;
       margin-right: 20px;
     }
   }

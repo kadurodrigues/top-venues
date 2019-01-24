@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Venue } from '../models/venue.model';
 import { VenuesService } from '../venues.service';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'tv-list',
@@ -16,15 +15,11 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.venuesService
       .getVenues()
-      .pipe(
-        map(venues => console.log(venues))
-      );
-    // this.venues = [
-    //   { name: 'Venue 1', rating: '2', categories: ['restaurant'] },
-    //   { name: 'Venue 2', rating: '4', categories: ['pub', 'restaurant'] },
-    //   { name: 'Venue 3', rating: '5', categories: ['park'] },
-    //   { name: 'Venue 4', rating: '4', categories: ['theater'] }
-    // ];
+      .subscribe(result => this.venues = this.mapVenuesToArray(result));
   }
 
+  public mapVenuesToArray(result: any) {
+    const { items } = result.response.groups[0];
+    return items.map((item: any) => Object.assign({}, item.venue));
+  }
 }

@@ -7,13 +7,15 @@ import { DetailsComponent } from './details/details.component';
 import { VenueComponent } from './venue/venue.component';
 
 import { VenuesService } from './venues.service';
+import { CategoriesComponent } from './venue/categories/categories.component';
 
 @NgModule({
   declarations: [
     VenuesComponent,
     ListComponent,
     DetailsComponent,
-    VenueComponent
+    VenueComponent,
+    CategoriesComponent
   ],
   imports: [
     CommonModule

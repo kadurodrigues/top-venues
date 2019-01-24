@@ -1,14 +1,16 @@
-<div class="card">
-  <header class="card__header">
-    <h3 class="card__header-title">{{venue.name}}</h3>
-    <p class="card__header-widget">{{venue.rating}}</p>
+<div class="venue-card">
+  <header class="venue-card__header">
+    <h3 class="venue-card__header-title">{{venue.name}}</h3>
   </header>
-  <div class="card__body">
-    <p>categories:</p>
-    <ul>
-      <li *ngFor="let categorie of venue.categories">
-        <span>{{ categorie }}</span>
-      </li>
-    </ul>
+  <div class="venue-card__body">
+    <div class="venue-card__categories">
+      <tv-categories [categories]="venue.categories"></tv-categories>
+    </div>
+    <div class="venue-card__address">
+      <span class="venue-card__address-label">Address:</span>
+      <p class="venue-card__address-text">
+        {{venue.location.address}}, {{venue.location.city}}
+      </p>
+    </div>
   </div>
 </div>
