@@ -1,0 +1,62 @@
+@import '../../../../styles.scss';
+
+.details-card {
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(216, 222, 228, .4);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header-avatar {
+    width: 120px;
+
+    > img {
+      border-radius: 8px;
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  &__header-info {
+    margin-top: 20px;
+  }
+
+  &__header-info-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+    > h3 {
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    > p {
+      padding: 4px;
+      height: 18px;
+      border-radius: 8px;
+      font-size: .8rem;
+      color: #fff;
+      background-color: $second-color;
+    }
+  }
+}
+
+@media(min-width: 992px) {
+  .details-card {
+    &__header {
+      flex-direction: row;
+      justify-content: start;
+    }
+
+    &__header-info {
+      width: 100%;
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+}

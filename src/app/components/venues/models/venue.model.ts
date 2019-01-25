@@ -1,6 +1,11 @@
 export interface Venue {
+  id: string,
   name: string;
-  rating: string;
   categories: Array<string>;
-  location?: any;
+  location?: Location;
+}
+
+export interface Location {
+  address: string,
+  city: string
 }

@@ -10,6 +10,6 @@ export class VenuesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

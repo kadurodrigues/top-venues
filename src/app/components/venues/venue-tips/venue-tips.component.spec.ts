@@ -1,22 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { ListComponent } from './list.component';
+import { VenueTipsComponent } from './venue-tips.component';
 
-describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+describe('VenueTipsComponent', () => {
+  let component: VenueTipsComponent;
+  let fixture: ComponentFixture<VenueTipsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListComponent ],
-      schemas: [NO_ERRORS_SCHEMA],
+      declarations: [ VenueTipsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent);
+    fixture = TestBed.createComponent(VenueTipsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

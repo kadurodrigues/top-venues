@@ -1,3 +1,14 @@
-<p>
-  details works!
-</p>
+<section class="details-card">
+  <header class="details-card__header">
+    <div class="details-card__header-avatar">
+      <img src="{{venue?.bestPhoto.prefix}}{{venue?.bestPhoto.width}}{{venue?.bestPhoto.suffix}}" alt="{{venue?.name}}">
+    </div>
+    <div class="details-card__header-info">
+      <div class="details-card__header-info-heading">
+        <h3>{{venue?.name}}</h3>
+        <p>{{ venue?.rating }}</p>
+      </div>
+      <tv-venue-tips [tips]="venue?.tips.groups[0].items"></tv-venue-tips>
+    </div>
+  </header>
+</section>

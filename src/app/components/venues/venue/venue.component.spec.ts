@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { VenueComponent } from './venue.component';
 
@@ -8,7 +9,8 @@ describe('VenueComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VenueComponent ]
+      declarations: [ VenueComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));
@@ -16,7 +18,14 @@ describe('VenueComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(VenueComponent);
     component = fixture.componentInstance;
-    component.venue = { name: 'Venue 1', rating: '2', categories: ['restaurant'] };
+    component.venue = {
+      name: 'Venue 1',
+      categories: ['restaurant'],
+      location: {
+        address: '10 Lorem ipsum road',
+        city: 'Dublin'
+      }
+    };
     fixture.detectChanges();
   });
 

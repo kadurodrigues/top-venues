@@ -5,7 +5,7 @@ import { CLIENT_ID, CLIENT_SECRET } from '../../apiKeys.js';
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.foursquare.com/v2/venues/explore',
+  apiUrl: 'https://api.foursquare.com/v2/venues',
   clientId: CLIENT_ID,
   clientSecret: CLIENT_SECRET
 };
