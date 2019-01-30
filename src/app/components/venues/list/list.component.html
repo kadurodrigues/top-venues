@@ -1,5 +1,17 @@
-<ul class="venues-list">
+<ul class="venues-list" *ngIf="venues?.length > 0 else listLoading">
   <li class="venues-list__item" *ngFor="let venue of venues">
     <tv-venue [venue]="venue"></tv-venue>
   </li>
 </ul>
+
+<ng-template #listLoading>
+  <ul class="list-loading">
+    <li class="list-loading__item" *ngFor="let item of venueListLoading">
+      <div class="list-loading__card">
+        <p class="list-loading__title"></p>
+        <p class="list-loading__categorie"></p>
+        <p class="list-loading__address"></p>
+      </div>
+    </li>
+  </ul>
+</ng-template>

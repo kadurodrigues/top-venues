@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class VenueTipsComponent implements OnInit {
   @Input() tips: any;
+
   constructor() { }
 
   ngOnInit() {

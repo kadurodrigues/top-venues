@@ -8,7 +8,6 @@
 
   &__header {
     display: flex;
-    flex-direction: column;
   }
 
   &__header-avatar {
@@ -22,13 +21,14 @@
   }
 
   &__header-info {
-    margin-top: 20px;
+    width: 100%;
+    margin-left: 10px;
   }
 
   &__header-info-heading {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
 
     > h3 {
       font-size: 1.2rem;
@@ -36,20 +36,117 @@
     }
 
     > p {
-      padding: 4px;
+      padding: 3px;
+      width: 18px;
       height: 18px;
-      border-radius: 8px;
+      border-radius: 4px;
       font-size: .8rem;
       color: #fff;
+      line-height: 1.3rem;
+      text-align: center;
       background-color: $second-color;
     }
+  }
+
+  &__price-list {
+    display: flex;
+    margin-top: 5px;
+
+    &__item {
+      font-size: .8rem;
+      color: #dfe6f1;
+
+      &.active {
+        color: #333;
+      }
+    }
+  }
+}
+
+.details-loading {
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(216, 222, 228, .4);
+
+  &__header {
+    display: flex;
+  }
+
+  &__header-avatar {
+    width: 110px;
+    height: 80px;
+    border-radius: 8px;
+    @extend .animation;
+  }
+
+  &__header-info {
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  &__header-info-title {
+    width: 70%;
+    height: 10px;
+    @extend .animation;
+  }
+
+  &__header-info-categorie {
+    margin-top: 10px;
+    width: 40%;
+    height: 10px;
+    @extend .animation;
+  }
+
+  &__header-info-price {
+    margin-top: 10px;
+    width: 25%;
+    height: 10px;
+    @extend .animation;
+  }
+
+  &__tips {
+    margin-top: 20px;
+  }
+
+  &__tips-header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tips-user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    @extend .animation;
+  }
+
+  &__tips-user-name {
+    margin-left: 10px;
+    width: 30%;
+    height: 10px;
+    @extend .animation;
+  }
+
+  &__tips-text {
+    margin-top: 10px;
+    width: 80%;
+    height: 10px;
+    @extend .animation;
+  }
+
+  &__tips-text.two {
+    width: 50%;
+  }
+
+  &__tips-text.three {
+    width: 30%;
   }
 }
 
 @media(min-width: 992px) {
   .details-card {
     &__header {
-      flex-direction: row;
       justify-content: start;
     }
 
@@ -57,6 +154,18 @@
       width: 100%;
       margin-top: 0;
       margin-left: 20px;
+    }
+  }
+
+  .details-loading {
+    &__header-info {
+      width: 20%;
+      margin-left: 15px;
+    }
+
+    &__header-avatar {
+      width: 80px;
+      height: 80px;
     }
   }
 }

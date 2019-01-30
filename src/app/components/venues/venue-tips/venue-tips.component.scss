@@ -1,5 +1,30 @@
 .tips-list {
-  &__text {
+  &__item-text {
+    margin-top: 10px;
     font-size: .9rem;
+    color: #444;
+    overflow: hidden;
+  }
+
+  &__item-user {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  &__item-user-photo {
+    width: 30px;
+    height: 30px;
+
+    > img {
+      max-width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  &__item-user-name {
+    margin-left: 5px;
+    font-size: .9rem;
+    font-weight: 600;
   }
 }

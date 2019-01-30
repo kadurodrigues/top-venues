@@ -1,0 +1,21 @@
+.animation {
+  animation-duration: 1.25s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmerEffect;
+  animation-timing-function: linear;
+  background: #f0f3f7;
+  background: linear-gradient(to right, #f0f3f7 8%, #dfe4eb 18%, #f0f3f7 33%);
+  background-size: 800px 104px;
+  position: relative;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: -468px 0
+  }
+
+  100% {
+    background-position: 468px 0
+  }
+}

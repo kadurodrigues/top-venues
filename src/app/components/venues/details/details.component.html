@@ -1,4 +1,4 @@
-<section class="details-card">
+<section class="details-card" *ngIf="venue !== null else detailLoading">
   <header class="details-card__header">
     <div class="details-card__header-avatar">
       <img src="{{venue?.bestPhoto.prefix}}{{venue?.bestPhoto.width}}{{venue?.bestPhoto.suffix}}" alt="{{venue?.name}}">
@@ -8,7 +8,35 @@
         <h3>{{venue?.name}}</h3>
         <p>{{ venue?.rating }}</p>
       </div>
-      <tv-venue-tips [tips]="venue?.tips.groups[0].items"></tv-venue-tips>
+      <tv-categories [categories]="venue?.categories"></tv-categories>
+      <ul class="details-card__price-list">
+        <li class="details-card__price-list__item" *ngFor="let price of prices" [ngClass]="{'active': price.active }">
+          {{ price.currency }}
+        </li>
+      </ul>
     </div>
   </header>
+  <tv-venue-tips [tips]="venue?.tips.groups[0].items"></tv-venue-tips>
 </section>
+
+<ng-template #detailLoading>
+  <div class="details-loading">
+    <div class="details-loading__header">
+      <div class="details-loading__header-avatar"></div>
+      <div class="details-loading__header-info">
+        <p class="details-loading__header-info-title"></p>
+        <p class="details-loading__header-info-categorie"></p>
+        <p class="details-loading__header-info-price"></p>
+      </div>
+    </div>
+    <div class="details-loading__tips">
+      <div class="details-loading__tips-header">
+        <div class="details-loading__tips-user-avatar"></div>
+        <div class="details-loading__tips-user-name"></div>
+      </div>
+      <div class="details-loading__tips-text"></div>
+      <div class="details-loading__tips-text two"></div>
+      <div class="details-loading__tips-text three"></div>
+    </div>
+  </div>
+</ng-template>

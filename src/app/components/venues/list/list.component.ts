@@ -9,6 +9,7 @@ import { Venue } from '../models/venue.model';
 })
 export class ListComponent implements OnInit {
   public venues: Array<Venue>;
+  public venueListLoading: Array<number> = Array(10);
 
   constructor(private venuesService: VenuesService) {}
 

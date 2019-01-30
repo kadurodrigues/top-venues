@@ -1,5 +1,13 @@
 <ul class="tips-list">
   <li class="tips-list__item" *ngFor="let tip of tips">
-    <p class="tips-list__text">{{ tip.text }}</p>
+    <div class="tips-list__item-user">
+      <div class="tips-list__item-user-photo">
+        <img src="{{tip.user.photo.prefix}}300{{ tip.user.photo.suffix}}" alt="{{tip.user.firstName}}">
+      </div>
+      <p class="tips-list__item-user-name">
+        {{ tip.user.firstName }}
+      </p>
+    </div>
+    <p class="tips-list__item-text">{{ tip.text }}</p>
   </li>
 </ul>
