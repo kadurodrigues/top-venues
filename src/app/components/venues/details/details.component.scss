@@ -27,7 +27,6 @@
 
   &__header-info-heading {
     display: flex;
-    justify-content: space-between;
     margin-bottom: 3px;
 
     > h3 {
@@ -37,6 +36,7 @@
 
     > p {
       padding: 3px;
+      margin-left: 10px;
       width: 18px;
       height: 18px;
       border-radius: 4px;
@@ -54,12 +54,17 @@
 
     &__item {
       font-size: .8rem;
-      color: #dfe6f1;
+      color: $third-color;
 
       &.active {
         color: #333;
       }
     }
+  }
+
+  &__save-btn {
+    float: right;
+    margin-top: 10px;
   }
 }
 
@@ -74,33 +79,32 @@
   }
 
   &__header-avatar {
-    width: 110px;
-    height: 80px;
+    width: 83px;
+    height: 83px;
     border-radius: 8px;
     @extend .animation;
   }
 
   &__header-info {
-    width: 100%;
     margin-left: 10px;
   }
 
   &__header-info-title {
-    width: 70%;
+    width: 170px;
     height: 10px;
     @extend .animation;
   }
 
   &__header-info-categorie {
     margin-top: 10px;
-    width: 40%;
+    width: 120px;
     height: 10px;
     @extend .animation;
   }
 
   &__header-info-price {
     margin-top: 10px;
-    width: 25%;
+    width: 60px;
     height: 10px;
     @extend .animation;
   }
@@ -155,6 +159,10 @@
       margin-top: 0;
       margin-left: 20px;
     }
+
+    &__save-btn {
+      float: none;
+    }
   }
 
   .details-loading {
@@ -164,8 +172,24 @@
     }
 
     &__header-avatar {
-      width: 80px;
-      height: 80px;
+      width: 107px;
+      height: 107px;
+    }
+
+    &__tips-user-name {
+      width: 10%;
+    }
+
+    &__tips-text {
+      width: 20%;
+    }
+
+    &__tips-text.two {
+      width: 15%;
+    }
+
+    &__tips-text.three {
+      width: 5%;
     }
   }
 }

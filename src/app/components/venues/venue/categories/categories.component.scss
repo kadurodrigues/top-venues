@@ -15,3 +15,11 @@
     background-color: $primary-color;
   }
 }
+
+@media(min-width: 992px) {
+  .categories-list {
+    &__item {
+      max-width: none;
+    }
+  }
+}

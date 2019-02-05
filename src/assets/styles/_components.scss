@@ -1,0 +1,18 @@
+// Buttons
+.button {
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.primary {
+  color: #8092af;
+  background-color: $third-color;
+  box-shadow: 0 2px 0 darken($third-color, 10%);
+}
