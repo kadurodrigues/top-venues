@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { LOCAL_STORAGE_KEYS } from '../../../assets/constants';
 
 @Injectable()
 export class VenueStore {
-  private venueId: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+  private venueId: any = localStorage.getItem(LOCAL_STORAGE_KEYS.venueId);
+  private venueObservable: BehaviorSubject<any> = new BehaviorSubject<any>(this.venueId);
 
   constructor() {}
 
-  public setVenueId(venueId: string) {
-    this.venueId.next(venueId);
+  public setVenueId(venueId: any) {
+    this.venueObservable.next(venueId);
   }
 
   public getVenueId() {
-    return this.venueId.asObservable();
+    return this.venueObservable.asObservable();
   }
 }

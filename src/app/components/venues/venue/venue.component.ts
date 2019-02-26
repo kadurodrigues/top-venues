@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Venue } from '../models/venue.model';
 import { VenueStore } from '../venues.store';
 
+import { LOCAL_STORAGE_KEYS } from '../../../../assets/constants';
+
 @Component({
   selector: 'tv-venue',
   templateUrl: './venue.component.html',
@@ -19,8 +21,9 @@ export class VenueComponent implements OnInit {
   ngOnInit() {
   }
 
-  public venueDetails(venue: Venue) {
+  public handleGetDetails(venue: Venue) {
     const { name, id } = venue;
+    localStorage.setItem(LOCAL_STORAGE_KEYS.venueId, id);
     this.venueStore.setVenueId(id);
     this.router.navigate(['/venues', this.setUrlPath(name)]);
   }

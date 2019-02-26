@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VenuesService } from '../venues.service';
 import { Venue } from '../models/venue.model';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'tv-list',
@@ -8,25 +10,17 @@ import { Venue } from '../models/venue.model';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  public venues: Array<Venue>;
-  public venueListLoading: Array<number> = Array(10);
+  public venues$: Observable<Venue>;
 
   constructor(private venuesService: VenuesService) {}
 
   ngOnInit() {
-    this.venuesService
-      .getVenues()
-      .subscribe(result => this.venues = this.mapVenuesResult(result));
-
-    this.clearLocalStorage();
+    this.venues$ = this.venuesService.getVenues()
+      .pipe(map(result => this.mapVenuesResult(result)));
   }
 
   public mapVenuesResult(result: any) {
     return result.response.groups[0].items
       .map((item: any) => Object.assign({}, item.venue));
-  }
-
-  public clearLocalStorage() {
-    localStorage.clear();
   }
 }

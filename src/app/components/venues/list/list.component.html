@@ -1,4 +1,4 @@
-<ul class="venues-list" *ngIf="venues?.length > 0 else listLoading">
+<ul class="venues-list" *ngIf="venues$ | async as venues; else listLoading">
   <li class="venues-list__item" *ngFor="let venue of venues">
     <tv-venue [venue]="venue"></tv-venue>
   </li>
@@ -6,7 +6,7 @@
 
 <ng-template #listLoading>
   <ul class="list-loading">
-    <li class="list-loading__item" *ngFor="let item of venueListLoading">
+    <li class="list-loading__item" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]">
       <div class="list-loading__card">
         <p class="list-loading__title"></p>
         <p class="list-loading__categorie"></p>
